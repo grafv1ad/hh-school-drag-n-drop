@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 
 const mode = process.env.NODE_ENV || 'development';
 const isDevMode = mode === 'development';
@@ -13,7 +14,7 @@ module.exports = {
     devtool: 'source-map',
     devServer: {
         port: 4200,
-        open: true,
+        open: false,
     },
     entry: {
         main: path.resolve(__dirname, 'src', 'index.js'),
@@ -29,6 +30,13 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: '[name].css',
+        }),
+        new BrowserSyncPlugin({
+              host: 'localhost',
+              port: 3000,
+              proxy: 'http://localhost:4200/'
+            }, {
+              reload: false
         }),
     ],
     module: {
