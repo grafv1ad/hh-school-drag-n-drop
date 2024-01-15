@@ -1,0 +1,19 @@
+.drop {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    &__item {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        border-radius: var(--border-radius);
+        background: var(--c-white);
+        @include media-gt-xs {
+            width: calc(100% / 2 - var(--gap) / 2);
+            max-width: 500px;
+        }
+    }
+    @include media-gt-xs {
+        flex-direction: row;
+        justify-content: center;
+    }
+}

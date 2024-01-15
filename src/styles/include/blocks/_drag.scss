@@ -1,0 +1,12 @@
+.drag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 calc(var(--gap) * 2);
+    &__item {
+        width: 100px;
+        height: 100px;
+        border-radius: var(--border-radius);
+        background: var(--c-white);
+    }
+}

@@ -11,3 +11,11 @@ body {
     display: flex;
     flex-direction: column;
 }
+.main {
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    @include media-gt-m {
+        padding: 50px 100px;
+    }
+}
