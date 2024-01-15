@@ -1,6 +1,6 @@
 :root {
-    --c-background: tomato;
-    --c-white: #fafafa;
+    --c-background: #fafafa;
+    --c-text: #202020;
     --f-main: 'Inter', sans-serif;
     --border-radius: 15px;
     --gap: 20px;
@@ -10,4 +10,5 @@ body {
     line-height: normal;
     font-family: var(--f-main);
     background: var(--c-background);
+    color: var(--c-text)
 }

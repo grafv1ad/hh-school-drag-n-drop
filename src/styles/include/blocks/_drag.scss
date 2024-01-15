@@ -7,6 +7,17 @@
         width: 100px;
         height: 100px;
         border-radius: var(--border-radius);
-        background: var(--c-white);
+        transition: background-color .2s, opacity .2s;
+        background-color: tomato;
+        cursor: grab;
+        &:active {
+            cursor: grabbing;
+        }
+        &.dragging {
+            position: absolute;
+            z-index: 999999;
+            left: 0;
+            top: 0;
+        }
     }
 }
