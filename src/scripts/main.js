@@ -19,13 +19,13 @@ const copyItem = (event) => {
     const shiftX = getEvent(event, 'clientX') - dragItem.getBoundingClientRect().left;
     const shiftY = getEvent(event, 'clientY') - dragItem.getBoundingClientRect().top;
 
-    dragItem.style.background = getRandomColor();
-
     const item = dragItem.cloneNode();
     item.id = '';
 
     item.classList.add('dragging');
     document.body.append(item);
+
+    dragItem.style.background = getRandomColor();
 
     setItemPosition(item, getEvent(event, 'pageX'), getEvent(event, 'pageY'), shiftX, shiftY);
 
