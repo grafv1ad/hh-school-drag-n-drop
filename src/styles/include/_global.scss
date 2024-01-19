@@ -1,9 +1,14 @@
 :root {
+    --c-background: #fafafa;
+    --c-text: #202020;
     --f-main: 'Inter', sans-serif;
+    --border-radius: 15px;
+    --gap: 20px;
 }
-
 body {
     font-size: 16px;
     line-height: normal;
     font-family: var(--f-main);
+    background: var(--c-background);
+    color: var(--c-text)
 }

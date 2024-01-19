@@ -1,0 +1,66 @@
+.drop {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    &__item {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        border-radius: var(--border-radius);
+        border: 2px solid var(--c-text);
+        background: var(--c-white);
+        overflow: hidden;
+        position: relative;
+        &_grid {
+            padding: calc(var(--gap) / 2);
+            overflow-y: auto;
+            .drag__item {
+                display: inline-block;
+                margin: calc(var(--gap) / 4);
+            }
+            &::after {
+                content: 'Grid';
+            }
+        }
+        &_free {
+            .drag__item {
+                position: absolute;
+                opacity: .95;                
+            }
+            &::after {
+                content: 'Free';
+            }
+        }
+        &::after {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            text-align: center;
+            padding: 0 var(--gap);
+            z-index: -1;
+            opacity: .5;
+            box-sizing: border-box;
+            transition: opacity .2s;
+            pointer-events: none;
+        }
+        &:not(:empty) {
+            &::after {
+                opacity: 0;
+            }
+        }
+        @include media-gt-xs {
+            width: calc(100% / 2 - var(--gap) / 2);
+            max-width: 500px;
+        }
+        .drag__item {
+            border-color: transparent;
+            pointer-events: none;
+
+        }
+    }
+    @include media-gt-xs {
+        flex-direction: row;
+        justify-content: center;
+    }
+}

@@ -2,3 +2,9 @@
 
 @import 'include/mixins';
 @import 'include/global';
+
+@import 'include/common/layout';
+@import 'include/common/heading';
+
+@import 'include/blocks/drag';
+@import 'include/blocks/drop';
